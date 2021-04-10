@@ -5,13 +5,13 @@ final class GameFieldView: View {
     
     // MARK: - Public Properties
     
-    private var columns: Int = 10
+    private var size: Int = 10
     
-    private var rows: Int = 10
+    private var food: Point?
     
     // MARK: - Private Properties
     
-     var fieldPoints: [[FieldPointView]] = []
+    var fieldPoints: [[FieldPointView]] = []
     
     // MARK: - Life Cycle
     
@@ -32,7 +32,7 @@ final class GameFieldView: View {
             $0.edges.equalToSuperview()
         }
         
-        for _ in 0..<rows {
+        for _ in 0..<size {
             
             var rowPoints: [FieldPointView] = []
             
@@ -47,7 +47,7 @@ final class GameFieldView: View {
             
             rootStackView.addArrangedSubview(rowStackView)
             
-            for _ in 0..<columns {
+            for _ in 0..<size {
                 
                 let pointView = FieldPointView()
                 rowStackView.addArrangedSubview(pointView)
@@ -55,6 +55,29 @@ final class GameFieldView: View {
             }
             
             fieldPoints.append(rowPoints)
+        }
+    }
+    
+    // MARK: - Public Methods
+    
+    func set(food: Point) {
+        self.food = food
+        fieldPoints[food.y][food.x].set(state: .food, animated: true)
+    }
+    
+    func draw(snake: Snake) {
+        for (rowIndex, row)  in fieldPoints.enumerated() {
+            for (columnIndex, fieldPoint) in row.enumerated() {
+                let point = Point(x: columnIndex, y: rowIndex)
+                
+                if snake.points.contains(point) {
+                    fieldPoint.set(state: .snake, animated: true)
+                } else if food == point {
+                    fieldPoint.set(state: .food, animated: true)
+                } else {
+                    fieldPoint.set(state: .empty, animated: true)
+                }
+            }
         }
     }
 }

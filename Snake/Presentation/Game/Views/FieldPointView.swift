@@ -31,28 +31,18 @@ final class FieldPointView: View {
     
     func set(state: FieldPointState, animated: Bool) {
         self.state = state
-        pointView.backgroundColor = state.color
-    }
-}
-
-enum FieldPointState: CaseIterable {
-    case empty
-    case snake
-    case food
-    
-    var color: UIColor {
-        switch self {
-        case .empty: return UIColor(named: "Field")!
-        case .snake: return UIColor(named: "Snake")!
-        case .food:  return UIColor(named: "Food")!
+        
+        
+        self.pointView.snp.remakeConstraints {
+            $0.center.equalToSuperview()
+            $0.size.equalToSuperview().multipliedBy(state.relativeSize)
         }
-    }
-    
-    var relativeSize: Float {
-        switch self {
-        case .empty: return 0.3
-        case .snake: return 0.8
-        case .food:  return 0.5
+        
+        if animated {
+            UIView.animate(withDuration: 0.3) {
+                self.pointView.backgroundColor = state.color
+                self.layoutIfNeeded()
+            }
         }
     }
 }

@@ -18,6 +18,10 @@
 		EB66EAC8262115FB00151ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAC7262115FB00151ACC /* ViewController.swift */; };
 		EB66EACB2621163000151ACC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EACA2621163000151ACC /* GameView.swift */; };
 		EB66EAD426211F1C00151ACC /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAD326211F1C00151ACC /* GameViewModel.swift */; };
+		EB66EAD8262120CE00151ACC /* FieldPointState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAD7262120CE00151ACC /* FieldPointState.swift */; };
+		EB66EADC262120F500151ACC /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EADB262120F500151ACC /* Snake.swift */; };
+		EB66EADF262125F900151ACC /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EADE262125F900151ACC /* Point.swift */; };
+		EB66EAE42621DDDD00151ACC /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAE32621DDDD00151ACC /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		EB66EAC7262115FB00151ACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB66EACA2621163000151ACC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		EB66EAD326211F1C00151ACC /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		EB66EAD7262120CE00151ACC /* FieldPointState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldPointState.swift; sourceTree = "<group>"; };
+		EB66EADB262120F500151ACC /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
+		EB66EADE262125F900151ACC /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		EB66EAE32621DDDD00151ACC /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,8 @@
 		EB6350D12620F7BF00AC3402 /* Snake */ = {
 			isa = PBXGroup;
 			children = (
+				EB66EAE22621DDAD00151ACC /* Extension */,
+				EB66EAD6262120B700151ACC /* Models */,
 				EB66EAB82620FE9800151ACC /* Common */,
 				EB66EAAA2620FB4E00151ACC /* Resourses */,
 				EB66EAA92620FB2600151ACC /* SupportingFiles */,
@@ -149,6 +159,24 @@
 				EB66EAC7262115FB00151ACC /* ViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		EB66EAD6262120B700151ACC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB66EAD7262120CE00151ACC /* FieldPointState.swift */,
+				EB66EADE262125F900151ACC /* Point.swift */,
+				EB66EADB262120F500151ACC /* Snake.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB66EAE22621DDAD00151ACC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EB66EAE32621DDDD00151ACC /* Observable.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB66EADF262125F900151ACC /* Point.swift in Sources */,
+				EB66EAD8262120CE00151ACC /* FieldPointState.swift in Sources */,
 				EB66EAC8262115FB00151ACC /* ViewController.swift in Sources */,
+				EB66EADC262120F500151ACC /* Snake.swift in Sources */,
+				EB66EAE42621DDDD00151ACC /* Observable.swift in Sources */,
 				EB66EABA2620FEA800151ACC /* View.swift in Sources */,
 				EB66EAB62620FD8F00151ACC /* FieldPointView.swift in Sources */,
 				EB66EAB12620FCF500151ACC /* GameViewController.swift in Sources */,
