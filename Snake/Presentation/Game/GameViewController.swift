@@ -20,6 +20,7 @@ class GameViewController: ViewController<GameView> {
     // MARK: - Private Methods
     
     private func setupInputs() {
+        
         viewModel.output.snake
             .bind(to: rootView.rx.snake)
             .disposed(by: disposeBag)
@@ -34,6 +35,7 @@ class GameViewController: ViewController<GameView> {
     }
     
     private func setupOutputs() {
+        
         Observable<Int>
             .interval(.milliseconds(600), scheduler: MainScheduler.instance)
             .asVoid()
@@ -46,7 +48,3 @@ class GameViewController: ViewController<GameView> {
             .disposed(by: disposeBag)
     }
 }
-
-// MARK: - Reactive Extension
-
-

@@ -7,7 +7,14 @@ extension Reactive where Base: UIViewController {
     internal var lightFeedback: Binder<Void> {
         Binder(base.self) { _, intensity  in
             let generator = UIImpactFeedbackGenerator(style: .light)
-            generator.impactOccurred()
+            generator.impactOccurred(intensity: 0.6)
+        }
+    }
+    
+    internal var heavyFeedback: Binder<Void> {
+        Binder(base.self) { _, intensity  in
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred(intensity: 0.8)
         }
     }
     

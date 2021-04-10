@@ -7,12 +7,13 @@ final class GameViewModel {
     let output: Output
     let input = Input()
     
-    init(rows: Int = 10, columns: Int = 10) {
-        let initialSnake = Snake.generate(fieldSizeX: rows, y: columns)
+    init(fieldSize: Size = Constants.fieldSize) {
+        
+        let initialSnake = Snake.generate(fieldSize: fieldSize)
         
         let initialFood = input.tick.first()
             .asObservable()
-            .map { _ in Point.random(inRangeX: 0..<rows, rangeY: 0..<columns) }
+            .map { _ in Point.random(inSize: fieldSize) }
         
         let move = input.tick
             .map { _ in Snake.Change.move }

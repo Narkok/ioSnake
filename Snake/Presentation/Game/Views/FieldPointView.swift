@@ -5,7 +5,6 @@ final class FieldPointView: View {
     // MARK: - Private Properties
     
     private let pointView = UIView()
-    private var state: FieldPointState = .empty
     
     // MARK: - Life Cycle
     
@@ -15,10 +14,8 @@ final class FieldPointView: View {
         addSubview(pointView)
         pointView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.size.equalToSuperview().multipliedBy(state.relativeSize)
+            $0.size.equalToSuperview().multipliedBy(FieldPointState.empty.relativeSize)
         }
-        
-        set(state: state, animated: false)
     }
     
     override func layoutSubviews() {
@@ -30,10 +27,8 @@ final class FieldPointView: View {
     // MARK: - Public Methods
     
     func set(state: FieldPointState, animated: Bool) {
-        self.state = state
         
-        
-        self.pointView.snp.remakeConstraints {
+        pointView.snp.remakeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalToSuperview().multipliedBy(state.relativeSize)
         }
@@ -43,6 +38,8 @@ final class FieldPointView: View {
                 self.pointView.backgroundColor = state.color
                 self.layoutIfNeeded()
             }
+        } else {
+            pointView.backgroundColor = state.color
         }
     }
 }

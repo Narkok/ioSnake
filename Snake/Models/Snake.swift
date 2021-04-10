@@ -13,11 +13,14 @@ struct Snake {
     private var direction: Direction
     private var isGrowing = false
     
+    private let fieldSize: Size
+    
     // MARK: - Initialization
     
-    init(direction: Direction, points: [Point]) {
+    init(points: [Point], direction: Direction, fieldSize: Size) {
         self.direction = direction
         self.points = points
+        self.fieldSize = fieldSize
     }
     
     // MARK: - Public Methods
@@ -43,6 +46,8 @@ struct Snake {
             snake.isGrowing = false
         }
         forwardPoint = forwardPoint + direction.delta
+        forwardPoint.x = (forwardPoint.x + fieldSize.width) % fieldSize.width
+        forwardPoint.y = (forwardPoint.y + fieldSize.height) % fieldSize.height
         snake.points.insert(forwardPoint, at: 0)
         return snake
     }
@@ -63,11 +68,11 @@ struct Snake {
     
     // MARK: - Static Methods
     
-    static func generate(fieldSizeX x: Int, y: Int) -> Snake {
+    static func generate(fieldSize: Size) -> Snake {
         let direction = Direction.allCases.randomElement() ?? .left
-        let point = Point(x: x / 2, y: x / 2)
-        let tail = point + direction.delta
-        return Snake(direction: direction, points: [point, tail])
+        let head = Point(x: Int.random(in: 1..<fieldSize.width - 1), y: Int.random(in: 1..<fieldSize.height - 1))
+        let tail = head - direction.delta
+        return Snake(points: [head, tail], direction: direction, fieldSize: fieldSize)
     }
 }
 

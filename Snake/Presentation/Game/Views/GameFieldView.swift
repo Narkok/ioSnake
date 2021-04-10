@@ -5,7 +5,7 @@ final class GameFieldView: View {
     
     // MARK: - Public Properties
     
-    private var size: Int = 10
+    private var fieldSize = Constants.fieldSize
     
     private var food: Point?
     
@@ -32,7 +32,7 @@ final class GameFieldView: View {
             $0.edges.equalToSuperview()
         }
         
-        for _ in 0..<size {
+        for _ in 0..<fieldSize.height {
             
             var rowPoints: [FieldPointView] = []
             
@@ -47,9 +47,10 @@ final class GameFieldView: View {
             
             rootStackView.addArrangedSubview(rowStackView)
             
-            for _ in 0..<size {
+            for _ in 0..<fieldSize.width {
                 
                 let pointView = FieldPointView()
+                pointView.set(state: .empty, animated: true)
                 rowStackView.addArrangedSubview(pointView)
                 rowPoints.append(pointView)
             }

@@ -23,6 +23,8 @@
 		EB66EADF262125F900151ACC /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EADE262125F900151ACC /* Point.swift */; };
 		EB66EAE42621DDDD00151ACC /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAE32621DDDD00151ACC /* Observable.swift */; };
 		EB66EAE82621F77100151ACC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAE72621F77100151ACC /* UIViewController.swift */; };
+		EB66EAEB26225D6500151ACC /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAEA26225D6500151ACC /* Size.swift */; };
+		EB66EAEE262261CD00151ACC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAED262261CD00151ACC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		EB66EADE262125F900151ACC /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		EB66EAE32621DDDD00151ACC /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		EB66EAE72621F77100151ACC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		EB66EAEA26225D6500151ACC /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		EB66EAED262261CD00151ACC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 				EB66EAD7262120CE00151ACC /* FieldPointState.swift */,
 				EB66EADE262125F900151ACC /* Point.swift */,
 				EB66EADB262120F500151ACC /* Snake.swift */,
+				EB66EAEA26225D6500151ACC /* Size.swift */,
+				EB66EAED262261CD00151ACC /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,9 +306,11 @@
 				EB66EAC8262115FB00151ACC /* ViewController.swift in Sources */,
 				EB66EADC262120F500151ACC /* Snake.swift in Sources */,
 				EB66EAE42621DDDD00151ACC /* Observable.swift in Sources */,
+				EB66EAEE262261CD00151ACC /* Constants.swift in Sources */,
 				EB66EABA2620FEA800151ACC /* View.swift in Sources */,
 				EB66EAB62620FD8F00151ACC /* FieldPointView.swift in Sources */,
 				EB66EAE82621F77100151ACC /* UIViewController.swift in Sources */,
+				EB66EAEB26225D6500151ACC /* Size.swift in Sources */,
 				EB66EAB12620FCF500151ACC /* GameViewController.swift in Sources */,
 				EB66EAD426211F1C00151ACC /* GameViewModel.swift in Sources */,
 				EB6350D32620F7BF00AC3402 /* AppDelegate.swift in Sources */,
