@@ -22,6 +22,7 @@
 		EB66EADC262120F500151ACC /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EADB262120F500151ACC /* Snake.swift */; };
 		EB66EADF262125F900151ACC /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EADE262125F900151ACC /* Point.swift */; };
 		EB66EAE42621DDDD00151ACC /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAE32621DDDD00151ACC /* Observable.swift */; };
+		EB66EAE82621F77100151ACC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAE72621F77100151ACC /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		EB66EADB262120F500151ACC /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		EB66EADE262125F900151ACC /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		EB66EAE32621DDDD00151ACC /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		EB66EAE72621F77100151ACC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				EB66EAE32621DDDD00151ACC /* Observable.swift */,
+				EB66EAE72621F77100151ACC /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				EB66EAE42621DDDD00151ACC /* Observable.swift in Sources */,
 				EB66EABA2620FEA800151ACC /* View.swift in Sources */,
 				EB66EAB62620FD8F00151ACC /* FieldPointView.swift in Sources */,
+				EB66EAE82621F77100151ACC /* UIViewController.swift in Sources */,
 				EB66EAB12620FCF500151ACC /* GameViewController.swift in Sources */,
 				EB66EAD426211F1C00151ACC /* GameViewModel.swift in Sources */,
 				EB6350D32620F7BF00AC3402 /* AppDelegate.swift in Sources */,

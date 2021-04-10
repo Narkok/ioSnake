@@ -29,7 +29,8 @@ final class GameViewModel {
         output = Output(
             snake: snake,
             food: initialFood,
-            gameOver: gameOver
+            gameOver: gameOver,
+            tick: input.tick.asObservable()
         )
     }
     
@@ -42,5 +43,6 @@ final class GameViewModel {
         let snake: Observable<Snake>
         let food: Observable<Point>
         let gameOver: Observable<Void>
+        let tick: Observable<Void>
     }
 }
