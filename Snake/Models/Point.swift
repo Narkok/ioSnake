@@ -6,7 +6,7 @@ struct Point: Equatable {
     var x: Int
     var y: Int
     
-    static func random(inSize size: Size) -> Point {
+    static func random(inRect size: Size) -> Point {
         Point(x: (0..<size.width).randomElement() ?? 0, y: (0..<size.height).randomElement() ?? 0)
     }
     

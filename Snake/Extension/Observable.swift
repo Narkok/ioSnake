@@ -35,6 +35,10 @@ public extension Observable {
     func delay(_ dueTime: RxTimeInterval) -> Observable<Element> {
         delay(dueTime, scheduler: MainScheduler.asyncInstance)
     }
+    
+    func throttle(_ dueTime: RxTimeInterval) -> Observable<Element> {
+        throttle(dueTime, scheduler: MainScheduler.asyncInstance)
+    }
 }
 
 

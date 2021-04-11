@@ -36,10 +36,16 @@ class GameViewController: ViewController<GameView> {
     
     private func setupOutputs() {
         
-        Observable<Int>
-            .interval(.milliseconds(600), scheduler: MainScheduler.instance)
+        viewModel.output.interval
+            .flatMapLatest { RxTimer.interval(.milliseconds($0)) }
             .asVoid()
+            .throttle(.milliseconds(Constants.minimalInterval))
             .bind(to: viewModel.input.tick)
+            .disposed(by: disposeBag)
+            
+        RxTimer.interval(.seconds(3))
+            .map { _ in Snake.Change.grow }
+            .bind(to: viewModel.input.change)
             .disposed(by: disposeBag)
         
         rootView.direction

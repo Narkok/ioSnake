@@ -27,6 +27,7 @@
 		EB66EAEE262261CD00151ACC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAED262261CD00151ACC /* Constants.swift */; };
 		EB66EAFA262273FF00151ACC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAF8262273FF00151ACC /* LoadingViewController.swift */; };
 		EB66EAFB262273FF00151ACC /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB66EAF9262273FF00151ACC /* LoadingViewController.xib */; };
+		EB66EAFE2622FC5E00151ACC /* RxTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAFD2622FC5E00151ACC /* RxTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		EB66EAED262261CD00151ACC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB66EAF8262273FF00151ACC /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EB66EAF9262273FF00151ACC /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
+		EB66EAFD2622FC5E00151ACC /* RxTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				EB66EAB92620FEA800151ACC /* View.swift */,
 				EB66EAC7262115FB00151ACC /* ViewController.swift */,
+				EB66EAFD2622FC5E00151ACC /* RxTimer.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				EB66EAE82621F77100151ACC /* UIViewController.swift in Sources */,
 				EB66EAEB26225D6500151ACC /* Size.swift in Sources */,
 				EB66EAB12620FCF500151ACC /* GameViewController.swift in Sources */,
+				EB66EAFE2622FC5E00151ACC /* RxTimer.swift in Sources */,
 				EB66EAD426211F1C00151ACC /* GameViewModel.swift in Sources */,
 				EB6350D32620F7BF00AC3402 /* AppDelegate.swift in Sources */,
 				EB66EABE262100B100151ACC /* GameFieldView.swift in Sources */,

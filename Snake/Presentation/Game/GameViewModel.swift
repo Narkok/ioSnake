@@ -7,16 +7,16 @@ final class GameViewModel {
     let output: Output
     let input = Input()
     
-    init(fieldSize: Size = Constants.fieldSize) {
+    init() {
         
-        let initialSnake = Snake.generate(fieldSize: fieldSize)
+        let initialSnake = Snake.generate(fieldSize: Constants.fieldSize)
         
-        let initialFood = input.tick.first()
+        let food = input.tick.first()
             .asObservable()
-            .map { _ in Point.random(inSize: fieldSize) }
+            .map { _ in Point.random(inRect: Constants.fieldSize) }
         
         let move = input.tick
-            .map { _ in Snake.Change.move }
+            .map { _ in Snake.Change.update }
         
         let snake = Observable
             .merge(move, input.change.asObservable())
@@ -27,11 +27,18 @@ final class GameViewModel {
             .map { $0.isDead }
             .asVoid()
         
+        let interval = snake
+            .map { $0.length }
+            .distinctUntilChanged()
+            .map { 700 / $0 + Constants.minimalInterval }
+            .startWith(600)
+        
         output = Output(
             snake: snake,
-            food: initialFood,
+            food: food,
             gameOver: gameOver,
-            tick: input.tick.asObservable()
+            tick: input.tick.asObservable(),
+            interval: interval
         )
     }
     
@@ -45,5 +52,6 @@ final class GameViewModel {
         let food: Observable<Point>
         let gameOver: Observable<Void>
         let tick: Observable<Void>
+        let interval: Observable<Int>
     }
 }
