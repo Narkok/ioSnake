@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewController" customModule="Snake" customModuleProvider="target">
+            <connections>
+                <outlet property="point1" destination="olI-bW-dSk" id="t2v-dg-OjI"/>
+                <outlet property="point2" destination="ses-GX-D7K" id="Qrz-NY-RXY"/>
+                <outlet property="point3" destination="fyl-fk-4Dl" id="GEd-fb-GGC"/>
+                <outlet property="point4" destination="hDS-jL-KVp" id="3EY-YU-IJz"/>
+                <outlet property="point5" destination="i9D-5x-PKZ" id="IaP-om-mOr"/>
+                <outlet property="point6" destination="2G3-6I-I9o" id="7f6-or-QbC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="r0P-Dx-x7b">
+                    <rect key="frame" x="41.5" y="397" width="331" height="102"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfz-kT-D4U">
+                            <rect key="frame" x="0.0" y="0.0" width="331" height="41"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                            <color key="textColor" name="Snake"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZr-S0-TPp">
+                            <rect key="frame" x="0.0" y="47" width="331" height="55"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PaG-49-QXt">
+                                    <rect key="frame" x="0.0" y="0.0" width="331" height="55"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olI-bW-dSk" customClass="FieldPointView" customModule="Snake" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ses-GX-D7K" customClass="FieldPointView" customModule="Snake" customModuleProvider="target">
+                                            <rect key="frame" x="55" y="0.0" width="55.5" height="55"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyl-fk-4Dl" customClass="FieldPointView" customModule="Snake" customModuleProvider="target">
+                                            <rect key="frame" x="110.5" y="0.0" width="55" height="55"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDS-jL-KVp" customClass="FieldPointView" customModule="Snake" customModuleProvider="target">
+                                            <rect key="frame" x="165.5" y="0.0" width="55" height="55"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9D-5x-PKZ" customClass="FieldPointView" customModule="Snake" customModuleProvider="target">
+                                            <rect key="frame" x="220.5" y="0.0" width="55.5" height="55"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2G3-6I-I9o" customClass="FieldPointView" customModule="Snake" customModuleProvider="target">
+                                            <rect key="frame" x="276" y="0.0" width="55" height="55"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="PaG-49-QXt" firstAttribute="top" secondItem="IZr-S0-TPp" secondAttribute="top" id="2aG-d6-Zba"/>
+                                <constraint firstAttribute="bottom" secondItem="PaG-49-QXt" secondAttribute="bottom" id="2mY-FI-Kfy"/>
+                                <constraint firstAttribute="trailing" secondItem="PaG-49-QXt" secondAttribute="trailing" id="4l4-2F-2Q2"/>
+                                <constraint firstAttribute="width" secondItem="IZr-S0-TPp" secondAttribute="height" multiplier="6:1" id="bUN-dz-u3z"/>
+                                <constraint firstItem="PaG-49-QXt" firstAttribute="leading" secondItem="IZr-S0-TPp" secondAttribute="leading" id="fnI-0C-lDx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="Background"/>
+            <constraints>
+                <constraint firstItem="r0P-Dx-x7b" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="I8n-xm-pAi"/>
+                <constraint firstItem="r0P-Dx-x7b" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Tx0-l8-DpK"/>
+                <constraint firstItem="r0P-Dx-x7b" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="iKp-zX-7OW"/>
+            </constraints>
+            <point key="canvasLocation" x="55" y="146"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Background">
+            <color red="0.88627450980392153" green="0.9137254901960784" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Snake">
+            <color red="0.47843137254901963" green="0.66274509803921566" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

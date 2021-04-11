@@ -25,6 +25,8 @@
 		EB66EAE82621F77100151ACC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAE72621F77100151ACC /* UIViewController.swift */; };
 		EB66EAEB26225D6500151ACC /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAEA26225D6500151ACC /* Size.swift */; };
 		EB66EAEE262261CD00151ACC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAED262261CD00151ACC /* Constants.swift */; };
+		EB66EAFA262273FF00151ACC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66EAF8262273FF00151ACC /* LoadingViewController.swift */; };
+		EB66EAFB262273FF00151ACC /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB66EAF9262273FF00151ACC /* LoadingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		EB66EAE72621F77100151ACC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		EB66EAEA26225D6500151ACC /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		EB66EAED262261CD00151ACC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EB66EAF8262273FF00151ACC /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		EB66EAF9262273FF00151ACC /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		EB66EAA82620FB1D00151ACC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EB66EAF02622737C00151ACC /* Loading */,
 				EB66EAAB2620FB6000151ACC /* Game */,
 			);
 			path = Presentation;
@@ -188,6 +193,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		EB66EAF02622737C00151ACC /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				EB66EAF8262273FF00151ACC /* LoadingViewController.swift */,
+				EB66EAF9262273FF00151ACC /* LoadingViewController.xib */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB66EAFB262273FF00151ACC /* LoadingViewController.xib in Resources */,
 				EB6350DF2620F7C000AC3402 /* LaunchScreen.storyboard in Resources */,
 				EB6350DC2620F7C000AC3402 /* Assets.xcassets in Resources */,
 			);
@@ -304,6 +319,7 @@
 				EB66EADF262125F900151ACC /* Point.swift in Sources */,
 				EB66EAD8262120CE00151ACC /* FieldPointState.swift in Sources */,
 				EB66EAC8262115FB00151ACC /* ViewController.swift in Sources */,
+				EB66EAFA262273FF00151ACC /* LoadingViewController.swift in Sources */,
 				EB66EADC262120F500151ACC /* Snake.swift in Sources */,
 				EB66EAE42621DDDD00151ACC /* Observable.swift in Sources */,
 				EB66EAEE262261CD00151ACC /* Constants.swift in Sources */,
