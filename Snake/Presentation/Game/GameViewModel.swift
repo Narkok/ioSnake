@@ -14,6 +14,7 @@ final class GameViewModel {
         let food = input.tick.first()
             .asObservable()
             .map { _ in Point.random(inRect: Constants.fieldSize) }
+            .share()
         
         let move = input.tick
             .map { _ in Snake.Change.update }
@@ -22,6 +23,16 @@ final class GameViewModel {
             .merge(move, input.change.asObservable())
             .scan(initialSnake) { $0.apply(change: $1) }
             .share()
+        
+        let headPoint = snake
+            .map { $0.headPoint }
+            .distinctUntilChanged()
+            .filterNil()
+        
+        let grow = Observable.combineLatest(headPoint, food)
+            .map { $0 == $1 }
+            .startWith(false)
+            .distinctUntilChanged()
         
         let gameOver = snake
             .map { $0.isDead }

@@ -42,11 +42,6 @@ class GameViewController: ViewController<GameView> {
             .throttle(.milliseconds(Constants.minimalInterval))
             .bind(to: viewModel.input.tick)
             .disposed(by: disposeBag)
-            
-        RxTimer.interval(.seconds(3))
-            .map { _ in Snake.Change.grow }
-            .bind(to: viewModel.input.change)
-            .disposed(by: disposeBag)
         
         rootView.direction
             .map { Snake.Change.newDirection($0) }

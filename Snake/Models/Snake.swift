@@ -5,15 +5,16 @@ struct Snake {
     
     // MARK: - Public Properties
     
-    private(set) var isDead: Bool = false
+    private(set) var isDead: Bool
     private(set) var points: [Point]
     
     var length: Int { points.count }
+    var headPoint: Point? { points.first }
     
     // MARK: - Public Properties
     
     private var direction: Direction
-    private var isGrowing = false
+    private var isGrowing: Bool
     
     private let fieldSize: Size
     
@@ -21,8 +22,10 @@ struct Snake {
     
     init(points: [Point], direction: Direction, fieldSize: Size) {
         self.direction = direction
-        self.points = points
         self.fieldSize = fieldSize
+        self.isGrowing = false
+        self.isDead = false
+        self.points = points
     }
     
     // MARK: - Public Methods
