@@ -11,32 +11,24 @@ final class GameView: View {
     
     // MARK: - Public Properties
     
-    let direction = PublishRelay<Snake.Direction>()
+    let direction = PublishRelay<Direction>()
     
     // MARK: - Life Cycle
     
     override func commonInit() {
         super.commonInit()
         
-        let upSwipeGesture = UISwipeGestureRecognizer()
-        upSwipeGesture.direction = .up
-        let up = upSwipeGesture.rx.event.map { _ in Snake.Direction.up }
+        let up = UISwipeGestureRecognizer(.up, onView: self)
+            .rx.event.map { _ in Direction.up }
         
-        let leftSwipeGesture = UISwipeGestureRecognizer()
-        leftSwipeGesture.direction = .left
-        let left = leftSwipeGesture.rx.event.map { _ in Snake.Direction.left }
+        let left = UISwipeGestureRecognizer(.left, onView: self)
+            .rx.event.map { _ in Direction.left }
         
-        let rightSwipeGesture = UISwipeGestureRecognizer()
-        rightSwipeGesture.direction = .right
-        let right = rightSwipeGesture.rx.event.map { _ in Snake.Direction.right }
+        let right = UISwipeGestureRecognizer(.right, onView: self)
+            .rx.event.map { _ in Direction.right }
         
-        let downSwipeGesture = UISwipeGestureRecognizer()
-        downSwipeGesture.direction = .down
-        let down = downSwipeGesture.rx.event.map { _ in Snake.Direction.down }
-        
-        [upSwipeGesture, leftSwipeGesture, rightSwipeGesture, downSwipeGesture].forEach {
-            addGestureRecognizer($0)
-        }
+        let down = UISwipeGestureRecognizer(.down, onView: self)
+            .rx.event.map { _ in Direction.down }
         
         Observable.merge(up, left, right, down)
             .bind(to: direction)

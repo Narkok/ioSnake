@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E5B599BD95853DD69C4DC9D4 /* Pods_Snake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1481D53DF537220AB6AE0478 /* Pods_Snake.framework */; };
 		EB3626502624DAB300260488 /* LoopedRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB36264F2624DAB300260488 /* LoopedRelay.swift */; };
+		EB3626532624DE3F00260488 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3626522624DE3F00260488 /* Direction.swift */; };
+		EB36265A2624E23500260488 /* UISwipeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3626592624E23500260488 /* UISwipeGestureRecognizer.swift */; };
 		EB6350D32620F7BF00AC3402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6350D22620F7BF00AC3402 /* AppDelegate.swift */; };
 		EB6350DC2620F7C000AC3402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB6350DB2620F7C000AC3402 /* Assets.xcassets */; };
 		EB6350DF2620F7C000AC3402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB6350DD2620F7C000AC3402 /* LaunchScreen.storyboard */; };
@@ -36,6 +38,8 @@
 		8A422914EC4B4E0A44A02486 /* Pods-Snake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake.debug.xcconfig"; path = "Target Support Files/Pods-Snake/Pods-Snake.debug.xcconfig"; sourceTree = "<group>"; };
 		DF7E13E39D2E10B89851D2AC /* Pods-Snake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake.release.xcconfig"; path = "Target Support Files/Pods-Snake/Pods-Snake.release.xcconfig"; sourceTree = "<group>"; };
 		EB36264F2624DAB300260488 /* LoopedRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopedRelay.swift; sourceTree = "<group>"; };
+		EB3626522624DE3F00260488 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		EB3626592624E23500260488 /* UISwipeGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwipeGestureRecognizer.swift; sourceTree = "<group>"; };
 		EB6350CF2620F7BF00AC3402 /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6350D22620F7BF00AC3402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB6350DB2620F7C000AC3402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				EB66EAD7262120CE00151ACC /* FieldPointState.swift */,
+				EB3626522624DE3F00260488 /* Direction.swift */,
 				EB66EADE262125F900151ACC /* Point.swift */,
 				EB66EADB262120F500151ACC /* Snake.swift */,
 				EB66EAEA26225D6500151ACC /* Size.swift */,
@@ -195,6 +200,7 @@
 			children = (
 				EB66EAE32621DDDD00151ACC /* Observable.swift */,
 				EB66EAE72621F77100151ACC /* UIViewController.swift */,
+				EB3626592624E23500260488 /* UISwipeGestureRecognizer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			files = (
 				EB3626502624DAB300260488 /* LoopedRelay.swift in Sources */,
 				EB66EADF262125F900151ACC /* Point.swift in Sources */,
+				EB36265A2624E23500260488 /* UISwipeGestureRecognizer.swift in Sources */,
 				EB66EAD8262120CE00151ACC /* FieldPointState.swift in Sources */,
 				EB66EAC8262115FB00151ACC /* ViewController.swift in Sources */,
 				EB66EAFA262273FF00151ACC /* LoadingViewController.swift in Sources */,
@@ -335,6 +342,7 @@
 				EB66EAE82621F77100151ACC /* UIViewController.swift in Sources */,
 				EB66EAEB26225D6500151ACC /* Size.swift in Sources */,
 				EB66EAB12620FCF500151ACC /* GameViewController.swift in Sources */,
+				EB3626532624DE3F00260488 /* Direction.swift in Sources */,
 				EB66EAFE2622FC5E00151ACC /* RxTimer.swift in Sources */,
 				EB66EAD426211F1C00151ACC /* GameViewModel.swift in Sources */,
 				EB6350D32620F7BF00AC3402 /* AppDelegate.swift in Sources */,

@@ -68,7 +68,7 @@ final class GameViewModel {
     }
     
     struct Input {
-        let direction = PublishRelay<Snake.Direction>()
+        let direction = PublishRelay<Direction>()
     }
     
     struct Output {
