@@ -51,7 +51,7 @@ final class GameView: View {
         addSubview(gameFieldView)
         gameFieldView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(12)
             $0.height.equalTo(gameFieldView.snp.width).multipliedBy(Constants.fieldSize.ratio)
         }
     }

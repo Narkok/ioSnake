@@ -27,7 +27,7 @@ final class GameViewModel {
         
         let snake = Observable
             .merge(grow, move, changeDirection)
-            .scan(Snake.generate(fieldSize: Constants.fieldSize)) { $0.apply($1) }
+            .scan(Snake(fieldSize: Constants.fieldSize)) { $0.apply($1) }
             .share()
         
         let headPoint = snake

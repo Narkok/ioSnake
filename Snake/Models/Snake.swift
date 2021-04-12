@@ -28,6 +28,19 @@ struct Snake {
         self.points = points
     }
     
+    init(fieldSize: Size, random: Bool = false) {
+        if random {
+            let direction = Direction.allCases.randomElement() ?? .left
+            let head = Point(x: Int.random(in: 1..<fieldSize.width - 1), y: Int.random(in: 1..<fieldSize.height - 1))
+            let middle = head - direction.delta
+            let tail = middle - direction.delta
+            self = Snake(points: [head, middle, tail], direction: direction, fieldSize: fieldSize)
+        } else {
+            let head = Point(x: -1, y: fieldSize.height / 2)
+            self = Snake(points: [head, head, head], direction: .right, fieldSize: fieldSize)
+        }
+    }
+    
     // MARK: - Public Methods
     
     func apply(_ change: Change) -> Snake {
@@ -67,15 +80,6 @@ struct Snake {
         var snake = self
         snake.isGrowing = true
         return snake
-    }
-    
-    // MARK: - Static Methods
-    
-    static func generate(fieldSize: Size) -> Snake {
-        let direction = Direction.allCases.randomElement() ?? .left
-        let head = Point(x: Int.random(in: 1..<fieldSize.width - 1), y: Int.random(in: 1..<fieldSize.height - 1))
-        let tail = head - direction.delta
-        return Snake(points: [head, tail], direction: direction, fieldSize: fieldSize)
     }
 }
 
