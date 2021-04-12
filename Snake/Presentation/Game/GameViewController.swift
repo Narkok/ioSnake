@@ -36,13 +36,6 @@ class GameViewController: ViewController<GameView> {
     
     private func setupOutputs() {
         
-        viewModel.output.interval
-            .flatMapLatest { RxTimer.interval(.milliseconds($0)) }
-            .asVoid()
-            .throttle(.milliseconds(Constants.minimalInterval))
-            .bind(to: viewModel.input.tick)
-            .disposed(by: disposeBag)
-        
         rootView.direction
             .bind(to: viewModel.input.direction)
             .disposed(by: disposeBag)

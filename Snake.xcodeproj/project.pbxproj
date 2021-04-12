@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E5B599BD95853DD69C4DC9D4 /* Pods_Snake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1481D53DF537220AB6AE0478 /* Pods_Snake.framework */; };
+		EB3626502624DAB300260488 /* LoopedRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB36264F2624DAB300260488 /* LoopedRelay.swift */; };
 		EB6350D32620F7BF00AC3402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6350D22620F7BF00AC3402 /* AppDelegate.swift */; };
 		EB6350DC2620F7C000AC3402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB6350DB2620F7C000AC3402 /* Assets.xcassets */; };
 		EB6350DF2620F7C000AC3402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB6350DD2620F7C000AC3402 /* LaunchScreen.storyboard */; };
@@ -34,6 +35,7 @@
 		1481D53DF537220AB6AE0478 /* Pods_Snake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A422914EC4B4E0A44A02486 /* Pods-Snake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake.debug.xcconfig"; path = "Target Support Files/Pods-Snake/Pods-Snake.debug.xcconfig"; sourceTree = "<group>"; };
 		DF7E13E39D2E10B89851D2AC /* Pods-Snake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake.release.xcconfig"; path = "Target Support Files/Pods-Snake/Pods-Snake.release.xcconfig"; sourceTree = "<group>"; };
+		EB36264F2624DAB300260488 /* LoopedRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopedRelay.swift; sourceTree = "<group>"; };
 		EB6350CF2620F7BF00AC3402 /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6350D22620F7BF00AC3402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB6350DB2620F7C000AC3402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				EB66EAB92620FEA800151ACC /* View.swift */,
 				EB66EAC7262115FB00151ACC /* ViewController.swift */,
 				EB66EAFD2622FC5E00151ACC /* RxTimer.swift */,
+				EB36264F2624DAB300260488 /* LoopedRelay.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3626502624DAB300260488 /* LoopedRelay.swift in Sources */,
 				EB66EADF262125F900151ACC /* Point.swift in Sources */,
 				EB66EAD8262120CE00151ACC /* FieldPointState.swift in Sources */,
 				EB66EAC8262115FB00151ACC /* ViewController.swift in Sources */,
