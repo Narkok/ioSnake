@@ -7,32 +7,33 @@ final class GameViewModel {
     let output: Output
     let input = Input()
     
+    private let reverse = Reverse()
+    
     init() {
         
-        let initialSnake = Snake.generate(fieldSize: Constants.fieldSize)
-        
-        let food = input.tick.first()
-            .asObservable()
+        let food = reverse.headOnFood.output
             .map { _ in Point.random(inRect: Constants.fieldSize) }
-            .share()
+            .startWith(Point.random(inRect: Constants.fieldSize))
+            .share(replay: 1)
+        
+        let grow = reverse.headOnFood.output
+            .map { _ in Snake.Change.grow }
+        
+        let changeDirection = input.direction
+            .map { Snake.Change.newDirection($0) }
         
         let move = input.tick
             .map { _ in Snake.Change.update }
         
         let snake = Observable
-            .merge(move, input.change.asObservable())
-            .scan(initialSnake) { $0.apply(change: $1) }
+            .merge(grow, move, changeDirection)
+            .scan(Snake.generate(fieldSize: Constants.fieldSize)) { $0.apply($1) }
             .share()
         
         let headPoint = snake
             .map { $0.headPoint }
             .distinctUntilChanged()
             .filterNil()
-        
-        let grow = Observable.combineLatest(headPoint, food)
-            .map { $0 == $1 }
-            .startWith(false)
-            .distinctUntilChanged()
         
         let gameOver = snake
             .map { $0.isDead }
@@ -41,8 +42,16 @@ final class GameViewModel {
         let interval = snake
             .map { $0.length }
             .distinctUntilChanged()
-            .map { 700 / $0 + Constants.minimalInterval }
+            .map { 900 / $0 + Constants.minimalInterval }
             .startWith(600)
+        
+        reverse.headOnFood.input = Observable
+            .combineLatest(headPoint, food)
+            .map { $0 == $1 }
+            .distinctUntilChanged()
+            .filter { $0 }
+            .asVoid()
+            .share()
         
         output = Output(
             snake: snake,
@@ -54,7 +63,7 @@ final class GameViewModel {
     }
     
     struct Input {
-        let change = PublishRelay<Snake.Change>()
+        let direction = PublishRelay<Snake.Direction>()
         let tick = PublishRelay<Void>()
     }
     
@@ -64,5 +73,33 @@ final class GameViewModel {
         let gameOver: Observable<Void>
         let tick: Observable<Void>
         let interval: Observable<Int>
+    }
+    
+    struct Reverse {
+        let headOnFood = ReversedRelay<Void>()
+    }
+}
+
+
+class ReversedRelay<T> {
+    
+    private var disposeBag = DisposeBag()
+    
+    private let relay = PublishRelay<T>()
+    
+    var output: Observable<T> { relay.asObservable() }
+    
+    var input: Observable<T> = .never() {
+        didSet {
+            dispose()
+            input.share(replay: 1)
+                .observeOn(MainScheduler.asyncInstance)
+                .bind(to: relay)
+                .disposed(by: disposeBag)
+        }
+    }
+    
+    func dispose() {
+        disposeBag = DisposeBag()
     }
 }

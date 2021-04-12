@@ -30,7 +30,7 @@ struct Snake {
     
     // MARK: - Public Methods
     
-    func apply(change: Change) -> Snake {
+    func apply(_ change: Change) -> Snake {
         switch change {
         case .grow:
             return self.grow()

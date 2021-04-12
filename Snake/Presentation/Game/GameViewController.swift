@@ -44,8 +44,7 @@ class GameViewController: ViewController<GameView> {
             .disposed(by: disposeBag)
         
         rootView.direction
-            .map { Snake.Change.newDirection($0) }
-            .bind(to: viewModel.input.change)
+            .bind(to: viewModel.input.direction)
             .disposed(by: disposeBag)
     }
 }
