@@ -12,10 +12,9 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        [point1, point2, point3, point4, point5, point6]
+        [point1, point2, point3, point5, point6]
             .forEach { $0?.set(state: .empty, animated: false) }
-        self.point4.set(state: .food, animated: false)
-
+        point4.set(state: .food, animated: false)
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
             self.point1.set(state: .snake, animated: true)
